@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Playlist xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Playlists>
+    <Library>
+      <Titles>
+        <Media>
+          <Id>0</Id>
+          <Name>01 - Keys To The Kingdom</Name>
+          <Path>C:\Users\Dardaxe\Desktop\Musique\Linkin Park - The Hunting Party (2014)\01 - Keys To The Kingdom.mp3</Path>
+          <Type>MUSIC</Type>
+        </Media>
+        <Media>
+          <Id>1</Id>
+          <Name>02 - All For Nothing (feat. Page Hamilton)</Name>
+          <Path>C:\Users\Dardaxe\Desktop\Musique\Linkin Park - The Hunting Party (2014)\02 - All For Nothing (feat. Page Hamilton).mp3</Path>
+          <Type>MUSIC</Type>
+        </Media>
+        <Media>
+          <Id>2</Id>
+          <Name>03 - Guilty All The Same (feat. Rakim)</Name>
+          <Path>C:\Users\Dardaxe\Desktop\Musique\Linkin Park - The Hunting Party (2014)\03 - Guilty All The Same (feat. Rakim).mp3</Path>
+          <Type>MUSIC</Type>
+        </Media>
+        <Media>
+          <Id>3</Id>
+          <Name>04 - The Summoning</Name>
+          <Path>C:\Users\Dardaxe\Desktop\Musique\Linkin Park - The Hunting Party (2014)\04 - The Summoning.mp3</Path>
+          <Type>MUSIC</Type>
+        </Media>
+        <Media>
+          <Id>4</Id>
+          <Name>05 - War</Name>
+          <Path>C:\Users\Dardaxe\Desktop\Musique\Linkin Park - The Hunting Party (2014)\05 - War.mp3</Path>
+          <Type>MUSIC</Type>
+        </Media>
+        <Media>
+          <Id>5</Id>
+          <Name>06 - Wastelands</Name>
+          <Path>C:\Users\Dardaxe\Desktop\Musique\Linkin Park - The Hunting Party (2014)\06 - Wastelands.mp3</Path>
+          <Type>MUSIC</Type>
+        </Media>
+        <Media>
+          <Id>6</Id>
+          <Name>07 - Until It's Gone</Name>
+          <Path>C:\Users\Dardaxe\Desktop\Musique\Linkin Park - The Hunting Party (2014)\07 - Until It's Gone.mp3</Path>
+          <Type>MUSIC</Type>
+        </Media>
+        <Media>
+          <Id>7</Id>
+          <Name>08 - Rebellion (feat. Daron Malakian)</Name>
+          <Path>C:\Users\Dardaxe\Desktop\Musique\Linkin Park - The Hunting Party (2014)\08 - Rebellion (feat. Daron Malakian).mp3</Path>
+          <Type>MUSIC</Type>
+        </Media>
+        <Media>
+          <Id>8</Id>
+          <Name>09 - Mark The Graves</Name>
+          <Path>C:\Users\Dardaxe\Desktop\Musique\Linkin Park - The Hunting Party (2014)\09 - Mark The Graves.mp3</Path>
+          <Type>MUSIC</Type>
+        </Media>
+        <Media>
+          <Id>9</Id>
+          <Name>10 - Drawbar (feat. Tom Morello)</Name>
+          <Path>C:\Users\Dardaxe\Desktop\Musique\Linkin Park - The Hunting Party (2014)\10 - Drawbar (feat. Tom Morello).mp3</Path>
+          <Type>MUSIC</Type>
+        </Media>
+        <Media>
+          <Id>10</Id>
+          <Name>11 - Final Masquerade</Name>
+          <Path>C:\Users\Dardaxe\Desktop\Musique\Linkin Park - The Hunting Party (2014)\11 - Final Masquerade.mp3</Path>
+          <Type>MUSIC</Type>
+        </Media>
+        <Media>
+          <Id>11</Id>
+          <Name>12 - A Line In The Sand</Name>
+          <Path>C:\Users\Dardaxe\Desktop\Musique\Linkin Park - The Hunting Party (2014)\12 - A Line In The Sand.mp3</Path>
+          <Type>MUSIC</Type>
+        </Media>
+      </Titles>
+      <Id>1</Id>
+      <Name>Playlist Linkin park</Name>
+    </Library>
+    <Library>
+      <Titles>
+        <Media>
+          <Id>12</Id>
+          <Name>01 - Under the Bridge [From the album Blood Sugar Sex Magik]</Name>
+          <Path>C:\Users\Dardaxe\Desktop\Musique\Red Hot Chili Peppers - Greatest Hits - 2003 [MP3 @ 320kbs] Malek44\01 - Under the Bridge [From the album Blood Sugar Sex Magik].mp3</Path>
+          <Type>MUSIC</Type>
+        </Media>
+        <Media>
+          <Id>13</Id>
+          <Name>02 - Give It Away [From the album Blood Sugar Sex Magik]</Name>
+          <Path>C:\Users\Dardaxe\Desktop\Musique\Red Hot Chili Peppers - Greatest Hits - 2003 [MP3 @ 320kbs] Malek44\02 - Give It Away [From the album Blood Sugar Sex Magik].mp3</Path>
+          <Type>MUSIC</Type>
+        </Media>
+        <Media>
+          <Id>14</Id>
+          <Name>03 - Californication [From the album Californication]</Name>
+          <Path>C:\Users\Dardaxe\Desktop\Musique\Red Hot Chili Peppers - Greatest Hits - 2003 [MP3 @ 320kbs] Malek44\03 - Californication [From the album Californication].mp3</Path>
+          <Type>MUSIC</Type>
+        </Media>
+        <Media>
+          <Id>15</Id>
+          <Name>04 - Scar Tissue [From the album Californication]</Name>
+          <Path>C:\Users\Dardaxe\Desktop\Musique\Red Hot Chili Peppers - Greatest Hits - 2003 [MP3 @ 320kbs] Malek44\04 - Scar Tissue [From the album Californication].mp3</Path>
+          <Type>MUSIC</Type>
+        </Media>
+        <Media>
+          <Id>16</Id>
+          <Name>05 - Soul to Squeeze [From the soundtrack to Coneheads]</Name>
+          <Path>C:\Users\Dardaxe\Desktop\Musique\Red Hot Chili Peppers - Greatest Hits - 2003 [MP3 @ 320kbs] Malek44\05 - Soul to Squeeze [From the soundtrack to Coneheads].mp3</Path>
+          <Type>MUSIC</Type>
+        </Media>
+        <Media>
+          <Id>17</Id>
+          <Name>06 - Otherside [From the album Californication]</Name>
+          <Path>C:\Users\Dardaxe\Desktop\Musique\Red Hot Chili Peppers - Greatest Hits - 2003 [MP3 @ 320kbs] Malek44\06 - Otherside [From the album Californication].mp3</Path>
+          <Type>MUSIC</Type>
+        </Media>
+        <Media>
+          <Id>18</Id>
+          <Name>07 - Suck My Kiss [From the album Blood Sugar Sex Magik]</Name>
+          <Path>C:\Users\Dardaxe\Desktop\Musique\Red Hot Chili Peppers - Greatest Hits - 2003 [MP3 @ 320kbs] Malek44\07 - Suck My Kiss [From the album Blood Sugar Sex Magik].mp3</Path>
+          <Type>MUSIC</Type>
+        </Media>
+        <Media>
+          <Id>19</Id>
+          <Name>08 - By the Way [From the album By the Way]</Name>
+          <Path>C:\Users\Dardaxe\Desktop\Musique\Red Hot Chili Peppers - Greatest Hits - 2003 [MP3 @ 320kbs] Malek44\08 - By the Way [From the album By the Way].mp3</Path>
+          <Type>MUSIC</Type>
+        </Media>
+        <Media>
+          <Id>20</Id>
+          <Name>09 - Parallel Universe [From the album Californication]</Name>
+          <Path>C:\Users\Dardaxe\Desktop\Musique\Red Hot Chili Peppers - Greatest Hits - 2003 [MP3 @ 320kbs] Malek44\09 - Parallel Universe [From the album Californication].mp3</Path>
+          <Type>MUSIC</Type>
+        </Media>
+        <Media>
+          <Id>21</Id>
+          <Name>10 - Breaking the Girl [From the album Blood Sugar Sex Magik]</Name>
+          <Path>C:\Users\Dardaxe\Desktop\Musique\Red Hot Chili Peppers - Greatest Hits - 2003 [MP3 @ 320kbs] Malek44\10 - Breaking the Girl [From the album Blood Sugar Sex Magik].mp3</Path>
+          <Type>MUSIC</Type>
+        </Media>
+        <Media>
+          <Id>22</Id>
+          <Name>11 - My Friends [From the album One Hot Minute]</Name>
+          <Path>C:\Users\Dardaxe\Desktop\Musique\Red Hot Chili Peppers - Greatest Hits - 2003 [MP3 @ 320kbs] Malek44\11 - My Friends [From the album One Hot Minute].mp3</Path>
+          <Type>MUSIC</Type>
+        </Media>
+        <Media>
+          <Id>23</Id>
+          <Name>12 - Higher Ground [From the album Mother's Milk]</Name>
+          <Path>C:\Users\Dardaxe\Desktop\Musique\Red Hot Chili Peppers - Greatest Hits - 2003 [MP3 @ 320kbs] Malek44\12 - Higher Ground [From the album Mother's Milk].mp3</Path>
+          <Type>MUSIC</Type>
+        </Media>
+        <Media>
+          <Id>24</Id>
+          <Name>13 - Universally Speaking [From the album By the Way]</Name>
+          <Path>C:\Users\Dardaxe\Desktop\Musique\Red Hot Chili Peppers - Greatest Hits - 2003 [MP3 @ 320kbs] Malek44\13 - Universally Speaking [From the album By the Way].mp3</Path>
+          <Type>MUSIC</Type>
+        </Media>
+        <Media>
+          <Id>25</Id>
+          <Name>14 - Road Trippin' [From the album Californication]</Name>
+          <Path>C:\Users\Dardaxe\Desktop\Musique\Red Hot Chili Peppers - Greatest Hits - 2003 [MP3 @ 320kbs] Malek44\14 - Road Trippin' [From the album Californication].mp3</Path>
+          <Type>MUSIC</Type>
+        </Media>
+        <Media>
+          <Id>26</Id>
+          <Name>15 - Fortune Faded [Previously Unreleased]</Name>
+          <Path>C:\Users\Dardaxe\Desktop\Musique\Red Hot Chili Peppers - Greatest Hits - 2003 [MP3 @ 320kbs] Malek44\15 - Fortune Faded [Previously Unreleased].mp3</Path>
+          <Type>MUSIC</Type>
+        </Media>
+        <Media>
+          <Id>27</Id>
+          <Name>16 - Save the Population [Previously Unreleased] - Copie</Name>
+          <Path>C:\Users\Dardaxe\Desktop\Musique\Red Hot Chili Peppers - Greatest Hits - 2003 [MP3 @ 320kbs] Malek44\16 - Save the Population [Previously Unreleased] - Copie.mp3</Path>
+          <Type>MUSIC</Type>
+        </Media>
+      </Titles>
+      <Id>2</Id>
+      <Name>nouvelle</Name>
+    </Library>
+  </Playlists>
+</Playlist>

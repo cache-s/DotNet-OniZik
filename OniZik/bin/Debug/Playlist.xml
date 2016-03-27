@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Playlist xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Playlists>
+    <Library>
+      <Titles>
+        <Media>
+          <Id>0</Id>
+          <Name>05 - Soul to Squeeze [From the soundtrack to Coneheads]</Name>
+          <Path>C:\Users\Dardaxe\Desktop\Musique\Red Hot Chili Peppers - Greatest Hits - 2003 [MP3 @ 320kbs] Malek44\05 - Soul to Squeeze [From the soundtrack to Coneheads].mp3</Path>
+          <Type>MUSIC</Type>
+        </Media>
+        <Media>
+          <Id>1</Id>
+          <Name>2015_12_13_13_08_27-ses</Name>
+          <Path>C:\Users\Dardaxe\Videos\PlaysTV\League of Legends\2015_12_13_13_08_27-ses.mp4</Path>
+          <Type>VIDEO</Type>
+        </Media>
+      </Titles>
+      <Id>1</Id>
+      <Name>Playlist</Name>
+    </Library>
+  </Playlists>
+</Playlist>

@@ -1,0 +1,106 @@
+﻿<UserControl x:Class="WpfApplication1.View.TopMenu"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfApplication1"
+             mc:Ignorable="d" Height="252" Width="auto" Background="#464646" HorizontalAlignment="Stretch" Grid.ZIndex="3">
+
+
+    <Grid Background="#464646" Width="461" HorizontalAlignment="Left">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.Resources>
+            <Style TargetType="Separator">
+                <Setter Property="Background" Value="#464646" />
+            </Style>
+            <Style TargetType="MenuItem">
+                <Setter Property="Background" Value="#464646" />
+            </Style>
+            <Style TargetType="{x:Type Menu}">
+                <Setter Property="Background" Value="#464646" />
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="true">
+                        <Setter Property="Foreground" Value="#FF0000" />
+                    </Trigger>
+                </Style.Triggers>
+
+            </Style>
+        </Grid.Resources>
+
+        <Menu x:Name="Fichier" HorizontalAlignment="Left" Height="21" VerticalAlignment="Top" Width="46" Background="#464646" BorderBrush="{x:Null}" Foreground="white" Grid.RowSpan="2" Margin="3.066,0,0,0">
+            <MenuItem Header="_Fichier" Background="#464646">
+                <MenuItem BorderThickness="1" Header="Ouvrir un fichier" Command="{Binding fileOpener}"/>
+                <MenuItem BorderThickness="1" Header="Ouvrir un dossier" Command="{Binding folderOpener}"/>
+                <MenuItem BorderThickness="1" Header="Ouvrir un flux réseau..." Command="{Binding fluxOpener}" />
+                <MenuItem BorderThickness="1" Header= "Quitter" Command="{Binding closeapp}"/>
+            </MenuItem>
+        </Menu>
+
+        <Menu x:Name="Audio" HorizontalAlignment="Left" Height="21" VerticalAlignment="Top" Width="46" Background="#464646" BorderBrush="{x:Null}" Foreground="white" Grid.RowSpan="2" Margin="53.599,0,0,0">
+            <MenuItem Header="_Audio" >
+                <MenuItem Header="Couper le volume" Command="{Binding muteVol}"/>
+                <MenuItem Header="Reactiver le volume" Command="{Binding unmuteVol}"/>
+            </MenuItem>
+        </Menu>
+        <Menu x:Name="Video" Height="21" VerticalAlignment="Top" Margin="103.132,0,0,0" Background="#464646" BorderBrush="{x:Null}" Foreground="white" Grid.RowSpan="2" HorizontalAlignment="Left" Width="46">
+            <MenuItem Header="_Video" >
+                <MenuItem Header="Plein écran" Command="{Binding setFullScreen}"/>
+                <MenuItem Header="Capture d'écran" Command="{Binding takeScreenShot}"/>
+            </MenuItem>
+        </Menu>
+        <Menu x:Name="Playlist" HorizontalAlignment="Left" Height="21" VerticalAlignment="Top" Width="51" Margin="152.176,0,0,0" Background="#464646" BorderBrush="{x:Null}" Foreground="white" Grid.RowSpan="2">
+            <MenuItem Header="Playlist">
+                <MenuItem Header="Importer une Playlist" Command="{Binding importPlayList}"/>
+            </MenuItem>
+        </Menu>
+        <Menu x:Name="Media" Height="21" VerticalAlignment="Top" Margin="208.753,-0.022,208.247,0" Background="#464646" BorderBrush="{x:Null}" Foreground="white" Grid.RowSpan="2">
+            <MenuItem Header="_Media" >
+                <MenuItem Header="Suivant" Command="{Binding goNext}"/>
+                <MenuItem Header="Précédent" Command="{Binding goPrev}"/>
+                <MenuItem Header="Lire" Command="{Binding playMedia}"/>
+                <MenuItem Header="Pause" Command="{Binding pauseMedia}"/>
+                <MenuItem Header="Arreter" Command="{Binding stopMedia}"/>
+            </MenuItem>
+        </Menu>
+
+        <Menu HorizontalAlignment="Left" Height="21" VerticalAlignment="Top" Width="46" Margin="257.138,0.332,0,0" Background="#464646" BorderBrush="{x:Null}" Foreground="white" Grid.RowSpan="2">
+            <MenuItem Header="_Aide">
+                <MenuItem Header="A propos..." Command="{Binding aboutOpener}"/>
+            </MenuItem>
+        </Menu>
+        <Popup x:Name="aboutPopUp" IsOpen="{Binding aboutIsOpen}" Grid.ColumnSpan="2" Margin="0,0,0,252" Grid.RowSpan="2">
+            <Grid Background="#FFE5E5E5" Height="163.558" Width="397.385">
+                <TextBlock x:Name="AboutText" Margin="19.5,18,10.385,9.058" TextWrapping="Wrap" Text="{Binding aboutText}" />
+                <Button x:Name="closeAbout" Content="X" HorizontalAlignment="Right" Height="19.5" Margin="0,5,5,0" VerticalAlignment="Top" Width="18" Command="{Binding aboutCloser}"/>
+            </Grid>
+        </Popup>
+        <Popup x:Name="fluxPopUp" IsOpen="{Binding fluxIsOpen}" Grid.ColumnSpan="2" Margin="0,0,0,252" Grid.RowSpan="2" >
+            <Grid  Background="#464646" Height="163.558" Width="397.385">
+                <StackPanel Orientation="Horizontal">
+                    <TextBox x:Name="flux" Height="30" Width="180" Margin="10,0,0,0" TextWrapping="Wrap" Text="{Binding fluxPath, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <Button x:Name="createPlaylist" Height="30" Width="180" Margin="15,0,0,0" Command="{Binding ReadFluxBtn}" FontSize="15" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Foreground="White" Background="#31A6D1">Lire le flux</Button>
+                </StackPanel>
+                <Button x:Name="closeFlux" Content="X" HorizontalAlignment="Right" Height="19.5" Margin="0,5,5,0" VerticalAlignment="Top" Width="18" Command="{Binding fluxCloser}"/>
+            </Grid>
+        </Popup>
+        <Popup x:Name="browsePopUp" IsOpen="{Binding browseIsOpen}" Grid.ColumnSpan="2" Margin="0,0,0,252" Grid.RowSpan="2">
+            <Grid Background="#FFE5E5E5" Height="163.558" Width="397.385">
+                <Button x:Name="browseFolderButton" Content="Selectionner le dossier" HorizontalAlignment="Right" Margin="0,36,8.885,0" Width="135" Height="24" VerticalAlignment="Top" Command="{Binding folderBrowser}"/>
+                <Border BorderThickness="1" BorderBrush="Black">
+                    <TextBlock x:Name="browseText" Height="19.5" Margin="6,39,148.385,0" TextWrapping="Wrap" Text="{Binding browsePath, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top"/>
+                </Border>
+                <CheckBox x:Name="recurseCheckBox"  Content="Recherche Recursive (/!\Restreindre à de petites arborescences)"   Margin="12,63,0,81.058" HorizontalAlignment="Left"  Width="360.5" IsChecked="{Binding recurCheck, UpdateSourceTrigger=PropertyChanged}"/>
+                <CheckBox x:Name="audioCheckBox"    Content="Fichier Audios"        Margin="12,0,0,61.558"  HorizontalAlignment="Left"  Width="142.5" Height="19.5" VerticalAlignment="Bottom"  IsChecked="{Binding audioCheck, UpdateSourceTrigger=PropertyChanged}"/>
+                <CheckBox x:Name="videoCheckBox"    Content="Fichier Vidéos"        Margin="12,0,0,41.558"  HorizontalAlignment="Left"  Width="142.5" Height="19.5" VerticalAlignment="Bottom"  IsChecked="{Binding videoCheck, UpdateSourceTrigger=PropertyChanged}"/>
+                <CheckBox x:Name="imageCheckBox"    Content="Images"                Margin="12,0,0,21.558"  HorizontalAlignment="Left"  Width="142.5" Height="19.5" VerticalAlignment="Bottom"  IsChecked="{Binding imageCheck, UpdateSourceTrigger=PropertyChanged}"/>
+                <Button   x:Name="generatePlayList" Content="Générer"               Margin="0,0,11.885,16"  HorizontalAlignment="Right" Width="108"   Height="28.5" VerticalAlignment="Bottom" Command="{Binding playlistGenerator}"/>
+                <Button x:Name="closeFolderBrowse" Content="X" HorizontalAlignment="Right" Height="19.5" Margin="0,5,5,0" VerticalAlignment="Top" Width="18" Command="{Binding closeBrowseFolder}"/>
+            </Grid>
+        </Popup>
+
+    </Grid>
+
+</UserControl>

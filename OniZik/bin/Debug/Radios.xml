@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Radios xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Stations>
+    <Station>
+      <Id>1</Id>
+      <Name>NRJ</Name>
+      <Flow>http://mp3lg4.scdn.arkena.com/8432/nrj_205243.mp3</Flow>
+      <Image>pack://application:,,,/WpfApplication1;component/Resources/Radios/RadioNRJ.png</Image>
+    </Station>
+    <Station>
+      <Id>2</Id>
+      <Name>LeMouv</Name>
+      <Flow>http://www.listenlive.eu/lemouv128.m3u</Flow>
+      <Image>pack://application:,,,/WpfApplication1;component/Resources/Radios/RadioLeMouv.jpg</Image>
+    </Station>
+    <Station>
+      <Id>7</Id>
+      <Name />
+      <Flow />
+      <Image>pack://application:,,,/WpfApplication1;component/Resources/Radios/RadioDefault.png</Image>
+    </Station>
+  </Stations>
+</Radios>

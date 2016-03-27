@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="WpfApplication1.View.MainDisplay"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfApplication1"
+             mc:Ignorable="d" Height="auto" Width="auto" VerticalAlignment="Center"
+             MouseMove="UserControl_MouseMove" MouseDoubleClick="UserControl_MouseDoubleClick" Grid.ZIndex="2" >
+    <Grid >
+        <MediaElement  x:Name="mediaElement" HorizontalAlignment="Stretch" Height="auto" VerticalAlignment="Stretch" Width="auto" MediaOpened="mediaElement_MediaOpened" MediaEnded="mediaElement_MediaEnded" Visibility="Visible"/>
+        <MediaElement  x:Name="mediaMusic" HorizontalAlignment="Stretch" Height="auto" VerticalAlignment="Stretch" Width="auto" Volume="0" Visibility="Collapsed" MediaEnded="mediaMusic_MediaEnded"/>
+    </Grid>
+
+
+</UserControl>

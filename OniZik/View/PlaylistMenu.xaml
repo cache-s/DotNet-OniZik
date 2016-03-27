@@ -1,0 +1,154 @@
+﻿<UserControl x:Class="WpfApplication1.View.PlaylistMenu"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:dragDrop="clr-namespace:GongSolutions.Wpf.DragDrop;assembly=GongSolutions.Wpf.DragDrop"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfApplication1"
+             xmlns:model="clr-namespace:WpfApplication1.Model"
+             mc:Ignorable="d" Height="auto" Width="auto" VerticalAlignment="Center"
+             d:DesignHeight="1500" d:DesignWidth="950" Grid.ZIndex="1">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/WpfApplication1;component/Resources/Dictionnary/PlayListMenuStyle.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid x:Name="playlistDisplay" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="auto" Width="auto" Margin="25,40,25,70">
+        <TextBlock x:Name="TitlePlaylist" HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" Text="Gérer mes playlists" VerticalAlignment="Top" FontSize="25" Foreground="White" />
+        <TextBox x:Name="playlistName" Height="30" Width="200" VerticalAlignment="Top" Style="{StaticResource placeHolder}" Tag="Nom playlist" Margin="0,50,240,0" Text="{Binding PlaylistName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+        <Button x:Name="createPlaylist" Height="30" Width="250"  Command="{Binding CreatePlaylistRelay}" FontSize="15" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="240,50,0,0" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Foreground="White" Background="#31A6D1">Créer playlist</Button>
+
+        <Grid Name="mainGrid" Height="auto" Width="auto" HorizontalAlignment="Stretch" Margin="180,100,180,5">
+            <StackPanel >
+                <Label Content="MES PLAYLISTS" Foreground="Gray" FontSize="20" />
+                <Separator ></Separator>
+            </StackPanel>
+            <Grid Name="mainListGrid" Margin="0,38,0,-38" Height="auto" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Name="myPlaylist" Width="2*" ></ColumnDefinition>
+                    <ColumnDefinition Name="myList" Width="5*" ></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Name="myButtonsHere" Height="0.4*"></RowDefinition>
+                    <RowDefinition Name="listHere" Height="10*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Grid.ColumnSpan="2" Grid.RowSpan="2" Width="auto" HorizontalAlignment="Stretch" 
+                                                            dragDrop:DragDrop.IsDropTarget="True"
+                                      dragDrop:DragDrop.DropHandler="{Binding}">
+                <StackPanel Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" Margin="0,20,5,30" Orientation="Horizontal">
+                        <ScrollViewer Height="auto" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="auto">
+                            <ItemsControl Margin="0,0,0,0" ItemsSource="{Binding PlaylistList}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate DataType="{x:Type model:PlaylistItem }">
+                                        <StackPanel Background="Transparent" Width="auto" VerticalAlignment="Stretch" Orientation="Horizontal">
+                                            <Button MinWidth="25" Margin="5,0,5,0" CommandParameter="{Binding Id}" Command="{Binding DelCommand}">
+                                                <Button.Template>
+                                                    <ControlTemplate>
+                                                        <Image Height="20" Width="20">
+                                                            <Image.Style>
+                                                                <Style TargetType="{x:Type Image}">
+                                                                    <Setter Property="Source" Value="pack://application:,,,/WpfApplication1;component/Resources/Library/delete.png"/>
+                                                                </Style>
+                                                            </Image.Style>
+                                                        </Image>
+                                                    </ControlTemplate>
+                                                </Button.Template>
+                                            </Button>
+                                            <Button Background="#262626" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" BorderThickness="0" x:Name="button" Height="20" Width="100" Padding="5,0,5,0" Content="{Binding Name}" CommandParameter="{Binding Id}" Command="{Binding Command}" Foreground="White"></Button>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </ScrollViewer>
+                        <Separator Visibility="{Binding AddVisibility}" Grid.Column="0" Grid.Row="0"  Style="{DynamicResource VerticalSeparatorStyle}" />
+                </StackPanel>
+
+                <Grid Grid.Column="1" Grid.Row="1" Width="auto" HorizontalAlignment="Stretch" Margin="180,0,20,0" >
+                    <StackPanel Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" Orientation="Horizontal">
+                        <Button Width="150" Height="30" Margin="0,10,25,10" VerticalAlignment="Top" HorizontalAlignment="Left" Visibility="{Binding AddVisibility}" Command="{Binding AddMediaRelay}" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Foreground="White" Background="#31A6D1">+ Ajouter média</Button>
+                            <Button Width="150" Height="30" Margin="0,10,25,10" VerticalAlignment="Top" HorizontalAlignment="Left" Visibility="{Binding AddVisibility}" Command="{Binding ReadPlayListRelay}" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Foreground="White" Background="#31A6D1">Lire playlist</Button>
+                            <TextBox Width="150" Height="30" Margin="0,10,25,10" VerticalAlignment="Top" HorizontalAlignment="Left" Visibility="{Binding AddVisibility}" Style="{StaticResource placeHolder}" Tag="Rechercher" Text="{Binding SearchText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    </StackPanel>
+                        <Grid Grid.Column="1" Grid.Row="1" Width="auto" HorizontalAlignment="Stretch" Margin="0,40,0,60">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*" ></ColumnDefinition>
+                                <ColumnDefinition Width="2*" ></ColumnDefinition>
+                                <ColumnDefinition Width="1*" ></ColumnDefinition>
+                                <ColumnDefinition Width="1*" ></ColumnDefinition>
+                                <ColumnDefinition Width="1*" ></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition ></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Button Grid.Column="1" Grid.Row="0" Content="TITRE" VerticalAlignment="Top" HorizontalAlignment="Left" Style="{StaticResource NoBorderBlueHover}" FontSize="15" Visibility="{Binding AddVisibility}" Command="{Binding SortTitleRelay}"/>
+                            <Button Grid.Column="2" Grid.Row="0" Content="ARTISTE" VerticalAlignment="Top" HorizontalAlignment="Left" Style="{StaticResource NoBorderBlueHover}" FontSize="15" Visibility="{Binding AddVisibility}" Command="{Binding SortArtistRelay}"/>
+                            <Button Grid.Column="3" Grid.Row="0" Content="ALBUM"  VerticalAlignment="Top" HorizontalAlignment="Left" Style="{StaticResource NoBorderBlueHover}" FontSize="15" Visibility="{Binding AddVisibility}" Command="{Binding SortAlbumRelay}"/>
+                            <Label Grid.Column="4" Grid.Row="0" Content="DURÉE" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="Gray" FontSize="15" Visibility="{Binding AddVisibility}"/>
+                        </Grid>
+                        <ScrollViewer  Margin="0,75" Grid.Column="1" Grid.Row="1"  VerticalAlignment="Stretch" Height="auto" Width="auto" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="auto">
+                            <ItemsControl ItemsSource="{Binding LibraryList}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate DataType="{x:Type model:LibraryItem}">
+                                        <Grid  Grid.Column="1" Grid.Row="1" Width="auto" VerticalAlignment="Stretch"  Margin="0,0,0,0">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="1*"></ColumnDefinition>
+                                                <ColumnDefinition Width="2*" ></ColumnDefinition>
+                                                <ColumnDefinition Width="1*" ></ColumnDefinition>
+                                                <ColumnDefinition Width="1*" ></ColumnDefinition>
+                                                <ColumnDefinition Width="1*" ></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition ></RowDefinition>
+                                            </Grid.RowDefinitions>
+                                            <Button Grid.Column="0" Grid.Row="0" MinWidth="25" Margin="0,0,5,0" HorizontalAlignment="Left" CommandParameter="{Binding Id}" Command="{Binding DelCommand}">
+                                                <Button.Template>
+                                                    <ControlTemplate>
+                                                        <Image Height="20" Width="20">
+                                                            <Image.Style>
+                                                                <Style TargetType="{x:Type Image}">
+                                                                    <Setter Property="Source" Value="pack://application:,,,/WpfApplication1;component/Resources/Library/delete.png"/>
+                                                                </Style>
+                                                            </Image.Style>
+                                                        </Image>
+                                                    </ControlTemplate>
+                                                </Button.Template>
+                                            </Button>
+                                            <Button Grid.Column="0" Grid.Row="0" Background="#262626" Foreground="White" BorderThickness="0" Height="20" Width="20" HorizontalAlignment="Left" Margin="25,0,0,0" Content="{Binding Name}" CommandParameter="{Binding LibItem}" Command="{Binding Command}" >
+                                                <Button.Template>
+                                                    <ControlTemplate>
+                                                        <Image Height="20" Width="20">
+                                                            <Image.Style>
+                                                                <Style TargetType="{x:Type Image}">
+                                                                    <Style.Triggers>
+                                                                        <DataTrigger Binding="{Binding Playing}" Value="True">
+                                                                            <Setter Property="Source" Value="pack://application:,,,/WpfApplication1;component/Resources/stopButton2.png"/>
+                                                                        </DataTrigger>
+                                                                        <DataTrigger Binding="{Binding Playing}" Value="False">
+                                                                            <Setter Property="Source" Value="pack://application:,,,/WpfApplication1;component/Resources/playButton2.png"/>
+                                                                        </DataTrigger>
+                                                                    </Style.Triggers>
+                                                                </Style>
+                                                            </Image.Style>
+                                                        </Image>
+                                                    </ControlTemplate>
+                                                </Button.Template>
+                                            </Button>
+                                            <Label Grid.Column="1" Grid.Row="0" Name="Title" HorizontalAlignment="Left" MaxWidth="300" Content="{Binding Path=Title}" Foreground="White" />
+                                            <Label Grid.Column="2" Grid.Row="0" Name="Artist" HorizontalAlignment="Left" MaxWidth="200" Content="{Binding Path=Artist}" Foreground="White" />
+                                            <Label Grid.Column="3" Grid.Row="0" Name="Album" HorizontalAlignment="Left" MaxWidth="200" Content="{Binding Path=Album}" Foreground="White" />
+                                            <Label Grid.Column="4" Grid.Row="0" Name="Time" HorizontalAlignment="Left" MaxWidth="100" Content="{Binding Path=Time}" Foreground="White" />
+                                        </Grid>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </ScrollViewer>
+                    </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,217 @@
+﻿<UserControl x:Class="WpfApplication1.View.LeftMenu"
+              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfApplication1"
+             mc:Ignorable="d" Width="{Binding MenuWidth, Mode=TwoWay}" Background="#464646" Grid.ZIndex="2">
+
+    <StackPanel>
+        <StackPanel  Orientation="Vertical" Name="menuExpanded" Visibility="{Binding ExpandedVisibility, Mode=TwoWay}">
+            <StackPanel Orientation="Horizontal" Width="200">
+                <Button FontSize="20" Foreground="White" Background="Transparent" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Content="OniZik" HorizontalAlignment="Center" Command="{Binding HomeRelay}"/>
+                <Button Height="20" Width="20" HorizontalAlignment="Left" Margin="100, 0, 0, 0" Command="{Binding SwitchPanelSizeRelay}">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image Height="20" Width="20">
+                                <Image.Style>
+                                    <Style TargetType="{x:Type Image}">
+                                        <Setter Property="Source"  Value="pack://application:,,,/WpfApplication1;component/Resources/Playlist/arrowLeft.png"/>
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Source" Value="pack://application:,,,/WpfApplication1;component/Resources/Playlist/arrowLeftSelected.png"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Image.Style>
+                            </Image>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </StackPanel>
+
+            <StackPanel Height="400" Width="200">
+                <TextBox Visibility="Hidden" Margin="5, 5, 5, 5" Style="{DynamicResource placeHolder}" Tag="Rechercher" Text="{Binding SearchText}"></TextBox>
+                <Button x:Name="btnPlaylists" Command="{Binding ShowPlaylistsRelay}" Content="Playlists" Style="{DynamicResource playlistsBtnStyle}"/>
+                <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}"/>
+                <Button Name="btnRadio" Command="{Binding ShowRadiosRelay}" Content="Radio" Style="{DynamicResource radioBtnStyle}"/>
+                <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" />
+                <Button Name="btnMedias" Command="{Binding ShowMediasRelay}" Content="Medias" Style="{DynamicResource mediasBtnStyle}"/>
+                <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" />
+                <Button Name="btnYoutube" Command="{Binding ShowYoutubeRelay}" Content="Youtube" Style="{DynamicResource youtubeBtnStyle}"/>
+            </StackPanel>
+            <Separator></Separator>
+            <StackPanel x:Name="musicInfo" Height="auto">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="200"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Image x:Name="coverArt" Grid.Column="0" Grid.Row="0" Width="150" Height="150" HorizontalAlignment="Center" Margin="10" Source="{Binding CoverImage}"/>
+                    <Label Grid.Column="0" Grid.Row="1" Name="songName" Foreground="White"  HorizontalAlignment="Center" Content="{Binding SongName}"></Label>
+                    <Label Grid.Column="0" Grid.Row="2" Name="artistName" Foreground="White" HorizontalAlignment="Center" Content="{Binding ArtistName}"></Label>
+                    <Label Grid.Column="0" Grid.Row="3" Name="albumName" Foreground="White" HorizontalAlignment="Center" Content="{Binding AlbumName}"></Label>
+                </Grid>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Name="menuCollapsed" Visibility="{Binding CollapsedVisibility, Mode=TwoWay}" Width="30">
+            <Button Height="20" Width="20" HorizontalAlignment="Left" Margin="0, 0, 0, 0" Command="{Binding SwitchPanelSizeRelay}">
+                <Button.Template>
+                    <ControlTemplate>
+                        <Image Height="20" Width="20">
+                            <Image.Style>
+                                <Style TargetType="{x:Type Image}">
+                                    <Setter Property="Source" Value="pack://application:,,,/WpfApplication1;component/Resources/Playlist/arrowRight.png"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Source" Value="pack://application:,,,/WpfApplication1;component/Resources/Playlist/arrowRightSelected.png"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Image.Style>
+                        </Image>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </StackPanel>
+    </StackPanel>
+
+    <UserControl.Resources>
+        <Style x:Key="placeHolder" TargetType="{x:Type TextBox}" BasedOn="{StaticResource {x:Type TextBox}}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Grid>
+                            <TextBox Text="{Binding Path=Text,
+                                                RelativeSource={RelativeSource TemplatedParent}, 
+                                                Mode=TwoWay,
+                                                UpdateSourceTrigger=PropertyChanged}"
+                                 x:Name="textSource" 
+                                 Background="Transparent" 
+                                 Panel.ZIndex="2" />
+                            <TextBox Text="{TemplateBinding Tag}" Background="{TemplateBinding Background}" Panel.ZIndex="1">
+                                <TextBox.Style>
+                                    <Style TargetType="{x:Type TextBox}">
+                                        <Setter Property="Foreground" Value="Transparent"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Path=Text, Source={x:Reference textSource}}" Value="">
+                                                <Setter Property="Foreground" Value="Gray"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBox.Style>
+                            </TextBox>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="listView" TargetType="ListView">
+            <Setter Property="Background" Value="Transparent"/>
+        </Style>
+        <Style x:Key="listViewItem" TargetType="ListViewItem">
+            <Setter Property="Background" Value="#909090"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="Transparent"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="plainBtnStyle" TargetType="Button">
+            <Setter Property="Foreground" Value="#909090"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Foreground" Value="White"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="playlistsBtnStyle" BasedOn="{StaticResource plainBtnStyle}" TargetType="Button">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Padding" Value="10, 0, 0, 0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <StackPanel Orientation="Horizontal" Width="200">
+                            <Image Stretch="Uniform" Height="20" Width="20" Margin="5, 0, 0, 0">
+                                <Image.Style>
+                                    <Style TargetType="{x:Type Image}">
+                                        <Setter Property="Source" Value="pack://application:,,,/WpfApplication1;component/Resources/Playlist/playlist.png"/>
+                                    </Style>
+                                </Image.Style>
+                            </Image>
+                            <TextBlock Text="{TemplateBinding Content}" Padding="{TemplateBinding Padding}" HorizontalAlignment="Center" Width="180"/>
+                        </StackPanel>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="radioBtnStyle" BasedOn="{StaticResource plainBtnStyle}" TargetType="Button">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Padding" Value="10, 0, 0, 0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <StackPanel Orientation="Horizontal" Width="200">
+                            <Image Stretch="Uniform" Height="20" Width="20" Margin="5, 0, 0, 0">
+                                <Image.Style>
+                                    <Style TargetType="{x:Type Image}">
+                                        <Setter Property="Source" Value="pack://application:,,,/WpfApplication1;component/Resources/Playlist/radio.png"/>
+                                    </Style>
+                                </Image.Style>
+                            </Image>
+                            <TextBlock Text="{TemplateBinding Content}" Padding="{TemplateBinding Padding}" HorizontalAlignment="Center" Width="180"/>
+                        </StackPanel>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="mediasBtnStyle" BasedOn="{StaticResource plainBtnStyle}" TargetType="Button">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Padding" Value="10, 0, 0, 0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <StackPanel Orientation="Horizontal" Width="200">
+                            <Image Stretch="Uniform" Height="20" Width="20" Margin="5, 0, 0, 0">
+                                <Image.Style>
+                                    <Style TargetType="{x:Type Image}">
+                                        <Setter Property="Source" Value="pack://application:,,,/WpfApplication1;component/Resources/Playlist/titres.png"/>
+                                    </Style>
+                                </Image.Style>
+                            </Image>
+                            <TextBlock Text="{TemplateBinding Content}" Padding="{TemplateBinding Padding}" HorizontalAlignment="Center" Width="180"/>
+                        </StackPanel>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="youtubeBtnStyle" BasedOn="{StaticResource plainBtnStyle}" TargetType="Button">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Padding" Value="10, 0, 0, 0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <StackPanel Orientation="Horizontal" Width="200">
+                            <Image Stretch="Uniform" Height="20" Width="20" Margin="5, 0, 0, 0">
+                                <Image.Style>
+                                    <Style TargetType="{x:Type Image}">
+                                        <Setter Property="Source" Value="pack://application:,,,/WpfApplication1;component/Resources/Playlist/youtubeLogo.png"/>
+                                    </Style>
+                                </Image.Style>
+                            </Image>
+                            <TextBlock Text="{TemplateBinding Content}" Padding="{TemplateBinding Padding}" HorizontalAlignment="Center" Width="180"/>
+                        </StackPanel>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+</UserControl>  

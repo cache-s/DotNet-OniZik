@@ -1,0 +1,22 @@
+﻿<Window x:Class="WpfApplication1.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication1"
+        xmlns:view="clr-namespace:WpfApplication1.View"
+        mc:Ignorable="d"
+        Title="MyWindowsMediaPlayerV2"
+        WindowStartupLocation="CenterScreen" WindowState="Maximized" Background="#262626" >
+    <Grid>
+        <view:TopMenu x:Name="topMenu" Height="30" HorizontalAlignment="Stretch" VerticalAlignment="Top"/>
+        <view:ControlMenu  x:Name="controlMenu" Height="50" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"/>
+        <view:MainDisplay x:Name="mainDisplay" Width="auto" Height="auto" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <view:LibraryMenu x:Name="libraryMenu" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="auto" Width="auto" Visibility="Collapsed"/>
+        <view:LyricsMenu x:Name="lyricsMenu" Width="200" Height="Auto" HorizontalAlignment="Right" Margin="0,31,-0.4,50.4"/>
+        <view:LeftMenu x:Name="leftMenu" Width="200" Height="Auto" HorizontalAlignment="Left" Margin="0,31,0,50.5"/>
+        <view:PlaylistMenu x:Name="playlistMenu" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="auto" Width="auto" Visibility="Collapsed"/>
+        <view:RadioMenu x:Name="radioMenu" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="auto" Width="auto" Visibility="Collapsed"/>
+        <view:YoutubeMenu x:Name="youtubeMenu" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="auto" Width="auto" Visibility="Collapsed"/>
+    </Grid>
+</Window>

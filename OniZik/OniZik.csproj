@@ -1,0 +1,479 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{52508BA6-AAFD-4B40-B220-A7D11AAB5C79}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WpfApplication1</RootNamespace>
+    <AssemblyName>WpfApplication1</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\icone.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.7.4137.9688, Culture=neutral, PublicKeyToken=a4292a325f69b123, processorArchitecture=MSIL">
+      <HintPath>..\packages\BouncyCastle.1.7.0\lib\Net40-Client\BouncyCastle.Crypto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GongSolutions.Wpf.DragDrop, Version=0.1.4.3, Culture=neutral, PublicKeyToken=d19974ea350ccea1, processorArchitecture=MSIL">
+      <HintPath>..\packages\gong-wpf-dragdrop.0.1.4.3\lib\net40\GongSolutions.Wpf.DragDrop.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Google.Apis, Version=1.10.0.25332, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.10.0\lib\net40\Google.Apis.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Google.Apis.Auth, Version=1.10.0.25333, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Auth.1.10.0\lib\net40\Google.Apis.Auth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Google.Apis.Auth.PlatformServices, Version=1.10.0.25333, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Auth.1.10.0\lib\net40\Google.Apis.Auth.PlatformServices.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Google.Apis.Core, Version=1.10.0.25331, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Core.1.10.0\lib\portable-net40+sl50+win+wpa81+wp80\Google.Apis.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Google.Apis.PlatformServices, Version=1.10.0.25332, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.10.0\lib\net40\Google.Apis.PlatformServices.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Google.Apis.YouTube.v3, Version=1.10.0.159, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.YouTube.v3.1.10.0.1590\lib\portable-net40+sl50+win+wpa81+wp80\Google.Apis.YouTube.v3.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MahApps.Metro, Version=1.2.0.0, Culture=neutral, PublicKeyToken=f4fb5a3c4d1e5b4f, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.1.2.0.0\lib\net45\MahApps.Metro.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop, Version=1.0.168.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="policy.2.0.taglib-sharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=db62eba44689b5b0, processorArchitecture=MSIL">
+      <HintPath>..\packages\taglib.2.1.0.0\lib\policy.2.0.taglib-sharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.2.0.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="taglib-sharp, Version=2.1.0.0, Culture=neutral, PublicKeyToken=db62eba44689b5b0, processorArchitecture=MSIL">
+      <HintPath>..\packages\taglib.2.1.0.0\lib\taglib-sharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Zlib.Portable, Version=1.11.0.0, Culture=neutral, PublicKeyToken=431cba815f6a8b5b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Zlib.Portable.Signed.1.11.0\lib\portable-net4+sl5+wp8+win8+wpa81+MonoTouch+MonoAndroid\Zlib.Portable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\RadioModel.cs" />
+    <Compile Include="Model\YoutubeModel.cs" />
+    <Compile Include="ViewModel\LyricsViewModel.cs" />
+    <Compile Include="ViewModel\YoutubeMenuViewModel.cs" />
+    <Compile Include="View\Util\Radio.cs" />
+    <Compile Include="ViewModel\MainDisplayViewModel.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\RadioViewModel.cs" />
+    <Compile Include="ViewModel\ControlMenuViewModel.cs" />
+    <Compile Include="ViewModel\topMenuViewModelFileOperation.cs" />
+    <Compile Include="ViewModel\topMenuViewModelVar.cs" />
+    <Compile Include="ViewModel\LibraryViewModel.cs" />
+    <Compile Include="Model\LibraryModel.cs" />
+    <Compile Include="Model\PlaylistModel.cs" />
+    <Compile Include="Model\topMenuModel.cs" />
+    <Compile Include="ViewModel\topMenuViewModel.cs" />
+    <Compile Include="View\Util\Media.cs" />
+    <Compile Include="View\Util\MediaFunctions.cs" />
+    <Compile Include="View\Util\RelayCommand.cs" />
+    <Compile Include="ViewModel\LeftMenuViewModel.cs" />
+    <Compile Include="ViewModel\PlaylistViewModel.cs" />
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ControlMenu.xaml.cs">
+      <DependentUpon>ControlMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LeftMenu.xaml.cs">
+      <DependentUpon>LeftMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LibraryMenu.xaml.cs">
+      <DependentUpon>LibraryMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LyricsMenu.xaml.cs">
+      <DependentUpon>LyricsMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainDisplay.xaml.cs">
+      <DependentUpon>MainDisplay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PlaylistMenu.xaml.cs">
+      <DependentUpon>PlaylistMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RadioMenu.xaml.cs">
+      <DependentUpon>RadioMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\TopMenu.xaml.cs">
+      <DependentUpon>TopMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Util\Youtube.cs" />
+    <Compile Include="View\Util\YoutubeVideo.cs" />
+    <Compile Include="View\YoutubeMenu.xaml.cs">
+      <DependentUpon>YoutubeMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Util\YoutubeSearch.cs" />
+    <Page Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ControlMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LeftMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LibraryMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LyricsMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MainDisplay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PlaylistMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\RadioMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\TopMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\YoutubeMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Resource Include="Resources\Dictionnary\PlayListMenuStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Resource Include="Resources\Dictionnary\ControlMenuStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Resource Include="Resources\Dictionnary\LibraryMenuStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\controlMenuImages\downScreenButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\controlMenuImages\downScreenButtonSelected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\controlMenuImages\fullscreenButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\controlMenuImages\fullscreenButtonSelected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\controlMenuImages\nextButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\controlMenuImages\nextButtonSelected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\controlMenuImages\playButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\controlMenuImages\playButtonSelected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\controlMenuImages\previousButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\controlMenuImages\previousButtonSelected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\controlMenuImages\repeatButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\controlMenuImages\repeatButtonSelected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\controlMenuImages\shuffleButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\controlMenuImages\shuffleButtonSelected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\controlMenuImages\volume1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\controlMenuImages\volume1Selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\controlMenuImages\volume2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\controlMenuImages\volume2Selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\controlMenuImages\volume3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\controlMenuImages\volume3Selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\controlMenuImages\volumeOff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\controlMenuImages\volumeOffSelected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Playlist\playlist.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Playlist\radio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\controlMenuImages\buttonPaused.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\controlMenuImages\buttonPausedSelected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Playlist\titres.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Lyrics\arrowRight.png" />
+    <Resource Include="Resources\Lyrics\arrowRightSelected.png" />
+    <Resource Include="Resources\Lyrics\buttonKaraoke.png" />
+    <Resource Include="Resources\Lyrics\buttonKaraokeOn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Playlist\histo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Playlist\arrowLeftSelected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Playlist\arrowLeft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Playlist\arrowRight.png" />
+    <Resource Include="Resources\Playlist\arrowRightSelected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Lyrics\arrowLeft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Lyrics\arrowLeftSelected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\noImage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Library\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Library\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\pauseButton2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\pauseButton2Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\playButton2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\playButton2Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Radios\RadioLeMouv.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Radios\RadioNRJ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Radios\RadioStream.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icone.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\stopButton2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Playlist\youtubeLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Radios\RadioDefault.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\RingEqualizer.mp4" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
